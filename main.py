@@ -16,7 +16,8 @@ url = 'https://dexonline.ro/definitie-sinonime/'+cuvantRandom+'/json'
 session = HTMLSession()
 r = session.get(url)
 print(r.html)
-sinonim = str(r.html.search('${}.$')[0]).replace(u"\u0103", "a")
+#sinonim = str(r.html.search('${}.$')[0]).replace(u"\u0103", "a")
+sinonim = str(r.html.search('${}.$')[0].encode('ascii', 'ignore'))
 cuvantReal=sinonim.split(',')[-1]
 print(cuvantReal)
 incercare()
