@@ -1,4 +1,5 @@
 import random
+import unidecode
 from requests_html import HTML, HTMLSession
 
 def incercare():
@@ -17,7 +18,7 @@ session = HTMLSession()
 r = session.get(url)
 print(r.html)
 #sinonim = str(r.html.search('${}.$')[0]).replace(u"\u0103", "a")
-sinonim = str(r.html.search('${}.$')[0].encode('ascii', 'ignore'))
+sinonim = str(r.html.search('${}.$')[0].encode('utf-8').decode('unicode-escape'))
 cuvantReal=sinonim.split(',')[-1]
 print(cuvantReal)
 incercare()
