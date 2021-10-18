@@ -13,8 +13,7 @@ def incercare():
         print('Mai Incerca!')
         incercare()
 
-#listacuvinte=["grai","frumos","descoperim","sfiala","poveste","destept","banuit","voce","marunte","mireasma","spaima","stralucire","destept","suras","omat","lent"]
-listacuvinte=["grai"]
+listacuvinte=["grai","frumos","sfiala","poveste","voce","spaima","suras","omat"]
 cuvantRandom = random.choice(listacuvinte)
 url = 'https://dexonline.ro/definitie-sinonime/'+cuvantRandom+'/json'
 session = HTMLSession()
